@@ -1,13 +1,15 @@
 const express = require('express');
 const axios = require('axios');
+const cors = require('cors'); // إضافة مكتبة CORS
 const app = express();
 
 const PORT = process.env.PORT || 3000;
 const BASE_URL = 'https://api.jikan.moe/v4';
 
+app.use(cors()); // السماح بالاتصال من أي تطبيق أو متصفح
 app.use(express.json());
 
-// الصفحة الرئيسية لتأكيد عمل السيرفر
+// الصفحة الرئيسية
 app.get('/', (req, res) => {
     res.json({
         status: "success",
@@ -15,7 +17,7 @@ app.get('/', (req, res) => {
     });
 });
 
-// مسار البحث عن أنمي
+// مسار البحث
 app.get('/api/search', async (req, res) => {
     try {
         const query = req.query.q;
