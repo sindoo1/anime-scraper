@@ -1,0 +1,13 @@
+{
+  "name": "anime-scraper",
+  "version": "1.0.0",
+  "description": "Witcher Anime API",
+  "main": "Anime.js",
+  "scripts": {
+    "start": "node Anime.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "axios": "^1.6.0"
+  }
+}
